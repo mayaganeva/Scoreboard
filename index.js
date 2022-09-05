@@ -1,3 +1,5 @@
+// Variables
+
 let scoreHome = document.getElementById("home");
 let scoreGuest = document.getElementById("guest");
 let sumHome = 0;
