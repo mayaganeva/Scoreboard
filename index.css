@@ -3,6 +3,10 @@ body {
     color: white;
     display: grid;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    
+    /* active calculation of the current viewport to prevent scrolling when 100vh */
+
     margin: 0;
 }
 

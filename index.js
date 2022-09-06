@@ -38,3 +38,9 @@ function plus3G() {
     sumGuest += 3;
     scoreGuest.textContent = sumGuest;
 }
+
+// Mobile viewport height fix
+
+let vh = window.innerHeight * 0.01;
+
+document.documentElement.style.setProperty('--vh', `${vh}px`);
