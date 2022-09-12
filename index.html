@@ -10,20 +10,21 @@
                 <h3>HOME</h3>
                 <div id="home" class="score">0</div>
                 <div class="container-btn">
-                    <button onclick="plus1H()">+1</button>
-                    <button onclick="plus2H()">+2</button>
-                    <button onclick="plus3H()">+3</button>
+                    <button onclick="plus1H(); winner()">+1</button>
+                    <button onclick="plus2H(); winner()">+2</button>
+                    <button onclick="plus3H(); winner()">+3</button>
                 </div>
             </div>
             <div class="col">
                 <h3>GUEST</h3>
                 <div id="guest" class="score">0</div>
                 <div class="container-btn">
-                    <button onclick="plus1G()">+1</button>
-                    <button onclick="plus2G()">+2</button>
-                    <button onclick="plus3G()">+3</button>
+                    <button onclick="plus1G(); winner()">+1</button>
+                    <button onclick="plus2G(); winner()">+2</button>
+                    <button onclick="plus3G(); winner()">+3</button>
                 </div>
             </div>
+            <button id="new">NEW GAME</button>
         </div>
         <script src="index.js"></script>
     </body>

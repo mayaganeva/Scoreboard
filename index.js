@@ -3,7 +3,7 @@
 let scoreHome = document.getElementById("home");
 let scoreGuest = document.getElementById("guest");
 let sumHome = 0;
-let sumGuest =0;
+let sumGuest = 0;
 
 //Home Score
 
@@ -38,6 +38,17 @@ function plus3G() {
     sumGuest += 3;
     scoreGuest.textContent = sumGuest;
 }
+
+function winner() {
+    if (sumHome > sumGuest) {
+        scoreHome.classList.add("winner");
+        scoreGuest.classList.remove("winner");
+    } else if (sumHome < sumGuest) {
+        scoreGuest.classList.add("winner");
+        scoreHome.classList.remove("winner");
+    }
+}
+
 
 // Mobile viewport height fix
 

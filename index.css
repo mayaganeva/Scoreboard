@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --accent: hsl(40, 100%, 60%);
+    --bg: hsl(240, 20%, 20%);
+    --dark: hsl(0, 0%, 10%);
+    --separator: hsl(240, 20%, 20%);
+}
+
 body {
-    background-color: hsl(240, 20%, 20%);
+    background-color: var(--bg);
     color: white;
     display: grid;
     height: 100vh;
@@ -25,7 +34,7 @@ body {
 }
 
 .col:not(:last-child)::after {
-    background: hsla(0, 0%, 100%, .1);
+    background: var(--separator);
     content: '';
     display: block;
     height: 2px;
@@ -42,14 +51,19 @@ h3 {
 }
 
 .score {
-    background: #191919;
-    color: hsl(40, 100%, 60%);
+    background: var(--dark);
+    border-radius: 16px;
+    color: var(--accent);
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     font-size: 5rem;
     padding-block: .3em;
     padding-left: .16em;
     width: 100%;
+}
+
+.winner {
+    box-shadow: 0 0 30px white;
 }
 
 .container-btn {
@@ -70,6 +84,12 @@ button {
     padding: .5em;
 }
 
+#new {
+    grid-column: 1 / -1;
+    margin-inline: auto;
+    width: 100%;
+}
+
 button:hover {
     background: hsla(0, 0%, 100%, .1);
 }
@@ -79,12 +99,13 @@ button:active {
 }
 
 button:focus {
-    outline: 1px solid hsla(40, 100%, 60%);
+    outline: 1px solid var(--accent);
 }
 
 @media (min-width: 630px) {
     .container {
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 3.5em;
         margin: auto;
         min-width: 540px;
         max-width: 600px;
