@@ -46,7 +46,17 @@ function winner() {
     } else if (sumHome < sumGuest) {
         scoreGuest.classList.add("winner");
         scoreHome.classList.remove("winner");
+    } else {
+        scoreHome.classList.remove("winner");
+        scoreGuest.classList.remove("winner");
     }
+}
+
+function newGame() {
+    sumHome = 0;
+    sumGuest = 0;
+    scoreHome.textContent = 0;
+    scoreGuest.textContent = 0;
 }
 
 
