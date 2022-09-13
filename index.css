@@ -1,14 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-    --accent: hsl(40, 100%, 60%);
-    --bg: hsl(240, 20%, 20%);
-    --dark: hsl(0, 0%, 10%);
-    --separator: hsl(240, 10%, 40%);
+    --border: hsla(0, 100%, 100%, .3);
 }
 
 body {
-    background-color: var(--bg);
+    background: linear-gradient(to right top, hsl(275, 66%, 13%), hsl(350, 81%, 42%));
     color: white;
     display: grid;
     height: 100vh;
@@ -20,12 +17,17 @@ body {
 }
 
 .container {
+    background-color: hsla(0, 0%, 54%, .4);
+    border: 1px solid var(--border);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 40px 4px hsla(0, 0%, 100%, .1);
     display: grid;
     gap: 4em;
     grid-template-columns: 1fr;
     margin: auto;
     max-width: 400px;
     min-width: 250px;
+    padding: 3em;
 }
 
 .col {
@@ -34,26 +36,27 @@ body {
 }
 
 .col:not(:last-child)::after {
-    background: var(--separator);
+    background: var(--border);
     content: '';
     display: block;
-    height: 2px;
+    height: 1px;
     position: relative;
     top: 2.1em;
-    width: 100%;
+    width: 50%;
 }
 
 h3 {
     font-family: 'Roboto Mono', 'Helvetica Neue', sans-serif;
     font-size: 3.5rem;
+    font-weight: 800;
     line-height: 1;
     margin-block: 0 .5em;
 }
 
 .score {
-    background: var(--dark);
+    background: hsla(0, 0%, 10%, .7);
     border-radius: 16px;
-    color: var(--accent);
+    color: hsl(40, 100%, 60%);
     text-align: center;
     font-family: 'Press Start 2P', cursive;
     font-size: 5rem;
@@ -64,7 +67,17 @@ h3 {
 }
 
 .winner {
-    box-shadow: 0 0 30px white;
+    animation: glow 250ms ease-out forwards;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 0 0 hsla(0, 0%, 0%, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 40px 4px hsla(0, 0%, 100%, .4);
+    }
 }
 
 .container-btn {
@@ -74,14 +87,15 @@ h3 {
 }
 
 button {
-    background: transparent;
-    border: 2px solid white;
-    border-radius: 7px;
+    background-color: hsla(0, 100%, 100%, .1);
+    border: 1px solid var(--border);
+    border-radius: 8px;
     color: white;
     font-family: 'Roboto Mono', 'Helvetica Neue', sans-serif;
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     padding: .5em;
+    transition: background-color 200ms;
 }
 
 #new {
@@ -91,25 +105,24 @@ button {
 }
 
 button:hover {
-    background: hsla(0, 0%, 100%, .1);
+    background-color: hsla(0, 100%, 100%, .2);
 }
 
 button:active {
-    background: hsla(0, 0%, 100%, .2);
+    background-color: hsla(0, 0%, 100%, .3);
 }
 
 button:focus {
     outline: 1px solid var(--accent);
 }
 
-@media (min-width: 630px) {
+@media (min-width: 700px) {
     .container {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 3.5em;
         margin: auto;
         min-width: 540px;
-        max-width: 600px;
-        width: 38vw;
+        row-gap: 3em;
     }
 
     .col:not(:last-child)::after {
